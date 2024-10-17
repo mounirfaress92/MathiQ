@@ -1,0 +1,93 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MathiQ</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>MathiQ</h1>
+        <div class="calculator">
+            <input type="text" id="display" disabled>
+            <button onclick="copyToClipboard()">Copy Result</button>
+            <div class="buttons">
+                <button onclick="clearDisplay()" title="Clear">C</button>
+                <button onclick="deleteLast()" title="Delete Last">DEL</button>
+                <button onclick="input('%')" title="Percentage">%</button>
+                <button onclick="input('/')" title="Divide">/</button>
+                <button onclick="input('7')" title="Seven">7</button>
+                <button onclick="input('8')" title="Eight">8</button>
+                <button onclick="input('9')" title="Nine">9</button>
+                <button onclick="input('*')" title="Multiply">*</button>
+                <button onclick="input('4')" title="Four">4</button>
+                <button onclick="input('5')" title="Five">5</button>
+                <button onclick="input('6')" title="Six">6</button>
+                <button onclick="input('-')" title="Subtract">-</button>
+                <button onclick="input('1')" title="One">1</button>
+                <button onclick="input('2')" title="Two">2</button>
+                <button onclick="input('3')" title="Three">3</button>
+                <button onclick="input('+')" title="Add">+</button>
+                <button onclick="input('0')" title="Zero">0</button>
+                <button onclick="input('.')" title="Decimal">.</button>
+                <button onclick="calculate()">=</button>
+            </div>
+        </div>
+
+        <!-- Unit Converter Section -->
+        <div id="unit-converter" style="display:none;">
+            <h2>Unit Converter</h2>
+            <input type="number" id="unit-amount" placeholder="Amount">
+            <select id="from-unit">
+                <option value="meters">Meters</option>
+                <option value="kilometers">Kilometers</option>
+                <option value="miles">Miles</option>
+                <option value="grams">Grams</option>
+                <option value="kilograms">Kilograms</option>
+                <option value="pounds">Pounds</option>
+                <option value="celsius">Celsius</option>
+                <option value="fahrenheit">Fahrenheit</option>
+            </select>
+            <select id="to-unit">
+                <option value="meters">Meters</option>
+                <option value="kilometers">Kilometers</option>
+                <option value="miles">Miles</option>
+                <option value="grams">Grams</option>
+                <option value="kilograms">Kilograms</option>
+                <option value="pounds">Pounds</option>
+                <option value="celsius">Celsius</option>
+                <option value="fahrenheit">Fahrenheit</option>
+            </select>
+            <button onclick="convertUnits()">Convert</button>
+            <p id="unit-result"></p>
+        </div>
+
+        <!-- Currency Converter Section -->
+        <div id="currency-converter" style="display:none;">
+            <h2>Currency Converter</h2>
+            <input type="number" id="currency-amount" placeholder="Amount">
+            <select id="from-currency">
+                <option value="USD">USD</option>
+                <option value="EUR">EUR</option>
+                <option value="GBP">GBP</option>
+            </select>
+            <select id="to-currency">
+                <option value="USD">USD</option>
+                <option value="EUR">EUR</option>
+                <option value="GBP">GBP</option>
+            </select>
+            <button onclick="convertCurrency()">Convert</button>
+            <p id="currency-result"></p>
+        </div>
+
+        <div class="additional-features">
+            <h2>Features</h2>
+            <button onclick="openUnitConverter()">Unit Converter</button>
+            <button onclick="openCurrencyConverter()">Currency Converter</button>
+        </div>
+    </div>
+    <script src="js/app.js"></script>
+</body>
+</html>
